@@ -1,0 +1,44 @@
+VAL int 5 // test
+VAL int 7
+OUT int *p
+IADD //C
+FLUSH
+VAL int &p
+ST:OUT
+FLUSH
+VAL str "Hello"
+VAL str " "
+VAL str "World!"
+OUT str *h
+CONCAT
+FLUSH
+VAL str &h
+ST:OUT
+FLUSH
+VAL bool true
+VAL bool true
+OUT bool *b
+AND
+FLUSH
+VAL bool *b
+ST:OUT
+FLUSH
+VAL bool true
+IF // 27
+GOTO 30 // 28
+GOTO 42 // 29
+VAL str "THIS " // 30
+VAL str "IS " // 31
+VAL str "A " // 32
+VAL str "PROGRAMMING " // 33
+VAL str "LANGUAGE" // 34
+OUT str *i // 35
+CONCAT // 36
+FLUSH // 37
+VAL str &i // 38
+ST:OUT // 39
+FLUSH // 40
+FINISH // 41
+VAL str "HI"
+ST:OUT
+FLUSH

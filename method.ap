@@ -1,0 +1,31 @@
+VAL str "com.jab125.apoint.ClassAccess"
+VAL str "scream"
+VAL str "void"
+VAL str "java.lang.String"
+VAL str "Hello"
+METHOD:STATIC
+FLUSH
+VAL str "java.lang.System"
+VAL str "out"
+VAL str "java.io.PrintStream"
+OUT obj *out
+FIELD:STATIC
+FLUSH
+VAL obj &out
+VAL str "java.io.PrintStream"
+VAL str "println"
+VAL str "void"
+VAL str "java.lang.String"
+VAL str "Hello"
+METHOD
+FLUSH
+VAL str "java.lang.Math"
+VAL str "random"
+VAL str "double"
+OUT double *random
+METHOD:STATIC
+FLUSH
+VAL double &random
+ST:OUT
+FLUSH
+GOTO 22

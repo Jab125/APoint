@@ -1,0 +1,26 @@
+VAL str CAT
+VAL str CAT
+OUT bool *c
+EQUALS
+FLUSH
+VAL str "Equals: "
+VAL bool &c
+OUT str *equals
+CONCAT
+FLUSH
+VAL str &equals
+ST:OUT
+FLUSH
+VAL str CAT
+VAL str CATTY
+OUT bool *d
+EQUALS
+FLUSH
+VAL str "Equals: "
+VAL bool &d
+OUT str *equals2
+CONCAT
+FLUSH
+VAL bool &equals2
+ST:OUT
+FLUSH

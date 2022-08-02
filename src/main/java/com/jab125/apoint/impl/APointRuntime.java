@@ -2,6 +2,7 @@ package com.jab125.apoint.impl;
 
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 
 public class APointRuntime implements com.jab125.apoint.api.APointRuntime {
     public final HashMap<String, Object> pointerTable = new HashMap<>();
@@ -47,6 +48,26 @@ public class APointRuntime implements com.jab125.apoint.api.APointRuntime {
 //        System.out.println(pointerTable);
 //        System.out.println(varTable);
 //        System.out.println(out);
+    }
+
+    @Override
+    public Object getPointer(String p) {
+        return this.pointerTable.get(p);
+    }
+
+    @Override
+    public void setPointer(String p, Object val) {
+        this.pointerTable.put(p, val);
+    }
+
+    @Override
+    public List<Object> getVals() {
+        return this.varTable;
+    }
+
+    @Override
+    public String getOut() {
+        return this.out;
     }
 
     private void put(String[] split) {

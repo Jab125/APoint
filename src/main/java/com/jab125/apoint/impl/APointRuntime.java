@@ -16,6 +16,11 @@ public class APointRuntime implements com.jab125.apoint.api.APointRuntime {
         for (int i = 0; i < lines.size(); i++) {
             String line = lines.get(i);
             var split = split(line, ' ');
+            if (!providers.containsKey(split[0])) continue;
+            if (!(providers.get(split[0]) instanceof BuiltIn)) {
+                providers.get(split[0]).run(split);
+                continue;
+            }
             //System.out.println(i+1 + ", " + line);
             switch (split[0]) {
                 case "VAL" -> val(split);
@@ -196,5 +201,17 @@ public class APointRuntime implements com.jab125.apoint.api.APointRuntime {
     @Override
     public void addCommand(String name, Provider provider) {
         this.providers.put(name, provider);
+    }
+
+    @Override
+    public void removeCommand(String name) {
+        this.providers.remove(name);
+    }
+
+    public static class BuiltIn implements Provider {
+        @Override
+        public void run(String[] params) {
+            throw new IllegalStateException();
+        }
     }
 }

@@ -4,6 +4,7 @@ import java.util.List;
 
 public interface APointRuntime {
     public void addCommand(String name, Provider provider);
+    public void removeCommand(String name);
     public void parse(String program);
     public static interface Provider {
         void run(String[] params);

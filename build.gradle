@@ -8,10 +8,10 @@ buildscript {
 
 plugins {
     id 'java'
+    id 'maven-publish'
 }
 
 group 'com.jab125.apoint'
-version '1.0.0'
 archivesBaseName = "non-obf-apoint"
 
 repositories {
@@ -39,3 +39,19 @@ task proguardJar(type: ProGuardTask, dependsOn: jar) {
 }
 
 build.dependsOn proguardJar
+
+publishing {
+    publications {
+        mavenJava(MavenPublication) {
+            from components.java
+        }
+    }
+
+    // See https://docs.gradle.org/current/userguide/publishing_maven.html for information on how to set up publishing.
+    repositories {
+        // Add repositories to publish to here.
+        // Notice: This block does NOT have the same function as the block in the top level.
+        // The repositories here will be used for publishing your artifact, not for
+        // retrieving dependencies.
+    }
+}
